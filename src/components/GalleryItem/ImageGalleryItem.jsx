@@ -13,7 +13,7 @@ ImageGalleryItem.propTypes = {
   id:PropTypes.number.isRequired,
   src:PropTypes.string.isRequired,
   modalSrc:PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  
 };
 
 export default ImageGalleryItem
