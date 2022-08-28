@@ -9,7 +9,7 @@ const App = () =>{
     setImageName( imageName );
 
   };
-
+  console.log(imageName)
 
 return(
   <>
