@@ -34,6 +34,7 @@ useEffect(() => {
     })
     .catch(error => console.log(error))
     .finally(() => setLoading(false));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [imageName])
 
 useEffect(() => {
@@ -50,6 +51,7 @@ useEffect(() => {
 
   })
   .catch(error => console.log(error))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [page])
 
  const handleSearchFormSubmit = imageName => {
