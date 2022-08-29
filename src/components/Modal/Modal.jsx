@@ -46,6 +46,7 @@ const Modal = ({children,closeModalApp}) => {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
+  closeModalApp:PropTypes.func.isRequired
 };
 
 

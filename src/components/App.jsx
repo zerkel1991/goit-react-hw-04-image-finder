@@ -23,10 +23,7 @@ useEffect(() => {
   }
   setLoading(true)
 
-  axios
-    .get(
-      `https://pixabay.com/api/?q=${imageName}&page=${page}&key=29503826-8199b1172087c43264700da9d&image_type=photo&orientation=horizontal&per_page=12`
-    )
+  fetchImages(imageName,page)
     .then(({ data }) => {
       setImages(data.hits)
       setTotalHits(data.totalHits)
@@ -41,10 +38,7 @@ useEffect(() => {
   if(page <= 1){
     return
   }
-  axios
-  .get(
-    `https://pixabay.com/api/?q=${imageName}&page=${page}&key=29503826-8199b1172087c43264700da9d&image_type=photo&orientation=horizontal&per_page=12`
-  )
+  fetchImages(imageName,page)
   .then(({ data }) => {
     setImages([...images,...data.hits])
     setTotalHits(data.totalHits)
@@ -62,8 +56,8 @@ useEffect(() => {
 };
 
   const loadmore = () => {
-setPage (page => page + 1)
-};
+  setPage (page + 1)
+  };
 
   const openModal = modalContent => {
 
@@ -76,6 +70,12 @@ setPage (page => page + 1)
   setShowModal(false)
 
 };
+ function fetchImages (imageName,page){
+   return axios
+  .get(
+    `https://pixabay.com/api/?q=${imageName}&page=${page}&key=29503826-8199b1172087c43264700da9d&image_type=photo&orientation=horizontal&per_page=12`
+  )
+ }
 
 
 return(
